@@ -1,0 +1,23 @@
+spring:
+  application:
+   name: book
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/book_test?characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+# 在 Mybaits 当中我们可以借助日志， 查看到SQL语句的执行，执行传递参数
+#以及执行结果
+mybatis:
+  configuration: #配置mybaits日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true #配置驼峰⾃动转换
+  # 配置 mybatis xml 的⽂件路径，在 resources/mapper 创建所有表的 xml ⽂件
+  mapper-locations: classpath:mapper/**Mapper.xml
+#设置日志文件的文件名
+logging:
+  file:
+    name: spring-book.log
+
+

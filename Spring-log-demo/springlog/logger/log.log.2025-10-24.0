@@ -1,0 +1,6 @@
+2025-10-24T13:32:52.400+08:00  INFO 12808 --- [springlog] [main] c.y.com.springlog.SpringlogApplication   : Starting SpringlogApplication using Java 17.0.9 with PID 12808 (D:\Java\JavaEE2\Spring-log-demo\springlog\target\classes started by YY_ang in D:\Java\JavaEE2\Spring-log-demo\springlog)
+2025-10-24T13:32:52.402+08:00  INFO 12808 --- [springlog] [main] c.y.com.springlog.SpringlogApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-10-24T13:32:52.791+08:00  INFO 12808 --- [springlog] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-24T13:32:52.799+08:00  INFO 12808 --- [springlog] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-24T13:32:52.801+08:00  INFO 12808 --- [springlog] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-10-24T13:32:52.827+08:00  INFO 12808 --- [springlog] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext

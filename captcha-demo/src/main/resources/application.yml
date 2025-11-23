@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: captcha-demo
+
+captcha:
+  width: 150
+  height: 50
+  session:
+     key: CAPTCHA_SEESION_KEY
+     date: CAPTCHA_SEESION_DATE
+
+#null1:
+#  value: ~
+
+#null.value: ~

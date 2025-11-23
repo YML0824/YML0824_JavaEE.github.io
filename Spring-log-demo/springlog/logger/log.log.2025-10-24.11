@@ -1,0 +1,6 @@
+2025-10-24T14:45:06.848+08:00  INFO 24160 --- [springlog] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-10-24T14:45:10.495+08:00  INFO 31600 --- [springlog] [main] c.y.com.springlog.SpringlogApplication   : Starting SpringlogApplication using Java 17.0.9 with PID 31600 (D:\Java\JavaEE2\Spring-log-demo\springlog\target\classes started by YY_ang in D:\Java\JavaEE2\Spring-log-demo\springlog)
+2025-10-24T14:45:10.497+08:00  INFO 31600 --- [springlog] [main] c.y.com.springlog.SpringlogApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-10-24T14:45:10.890+08:00  INFO 31600 --- [springlog] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-10-24T14:45:10.899+08:00  INFO 31600 --- [springlog] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-10-24T14:45:10.899+08:00  INFO 31600 --- [springlog] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yml.mybaits.mapper.UserInfoMapperXML">
+
+<!-- 写一个映射关系 -->
+<resultMap id="BaseMap" type="com.yml.mybaits.model.UserInfo">
+    <id property="id" column="id"></id>
+<!--    结果的映射 ,result表示普通键 ，id表示主键-->
+<!--    写xml的时候建议映射写全-->
+    <result property="deleteFlag" column="delete_flag"></result>
+    <result property="createTime" column="create_time"></result>
+    <result property="updateTime" column="update_time"></result>
+</resultMap>
+
+
+<!--可以定义多个-->
+    <!-- 写一个映射关系 -->
+    <resultMap id="BaseMap2" type="com.yml.mybaits.model.UserInfo">
+        <id property="id" column="id"></id>
+        <!--    结果的映射 ,result表示普通键 ，id表示主键-->
+        <result property="deleteFlag" column="delete_flag"></result>
+        <result property="createTime" column="create_time"></result>
+        <result property="updateTime" column="update_time"></result>
+    </resultMap>
+
+
+    <!--    里面放的SQL片段（字符串） 不一定可以执行-->
+    <sql id="sql">
+        select * from user_info
+    </sql>
+
+    <!--    查询-->
+<!--    只有select有resultType ，其他的不用添加，insert，update,delete返回的都是影响的行数-->
+    <select id="selectAll" resultType="com.yml.mybaits.model.UserInfo">
+          <include refid="sql"></include>
+           <!-- select * from user_info -->
+           <!--SELECT id,username,password,age,gender,phone,delete_flag as deleteFlag,
+           create_time as createTime,update_time as updateTime from user_info;-->
+</select>
+
+
+
+<select id="selectAll2" resultMap="BaseMap">
+ select * from user_info
+</select>
+
+
+<!--插入-->
+    <insert id="insertUser">
+        insert into user_info(username,password,age) values (#{username},#{password},#{age})
+    </insert>
+
+<!--    如果想拿到返回结果需要加useGeneratedKeys="true" keyProperty="id"-->
+    <insert id="insertUser2" useGeneratedKeys="true" keyProperty="id">
+        insert into user_info(username,password,age) values (#{userInfo.username},#{userInfo.password},#{userInfo.age})
+    </insert>
+
+
+    <update id="updateUser1">
+        update user_info set username = #{username} where id = #{id}
+    </update>
+
+    <update id="updateUser2">
+        update user_info set password = #{password} ,age = #{age}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteUser">
+        delete from user_info where id = #{id}
+    </delete>
+
+
+    <delete id="deleteByNameAge">
+        DELETE from user_info where username = #{username} AND age = #{age};
+    </delete>
+
+
+    <!--    动态SQL学习-->
+<!--    注意-->
+<!--    <if test="gender != null"> 这里的gender用的是参数的名称也就是类的属性名称，不是SQL的字段-->
+<!--     gender,表示拼接SQL，此处使用的是数据库字段名-->
+<!--    #{gender}, 这里的gender 也是参数的名称，接收参数的值-->
+<!--    if的判断条件是一样的-->
+<!--    逗号不能解决我们的多个为null的问题，应该采取其他的方法-->
+<!--    prefixOverrides:表示整个语句块要除掉的前缀
+        suffixOverrides：表示整个语句块要去掉的后缀
+        前缀和后缀，不一定是标点符号，是一个字符串
+-->
+    <insert id="insertUser3" >
+        insert into user_info
+        <trim prefix="(" suffix=")" prefixOverrides="," suffixOverrides="," >
+            <if test="username !=null">
+                username,
+            </if>
+            <if test="password !=null">
+                password,
+            </if>
+            <if test="age !=null">
+                age,
+            </if>
+            <if test="gender != null">
+                gender,
+            </if>
+            <if test="phone !=null">
+                phone,
+            </if>
+        </trim>
+
+        values
+
+        <trim prefix="(" suffix=")" prefixOverrides="," suffixOverrides=",">
+            <if test="username !=null">
+                #{username},
+            </if>
+            <if test="password !=null">
+                #{password},
+            </if>
+            <if test="age !=null">
+                #{age},
+            </if>
+            <if test="gender != null">
+                #{gender},
+            </if>
+            <if test="phone !=null">
+                #{phone},
+            </if>
+        </trim>
+    </insert>
+
+
+<!--    当查询条件为空时，会多余where关键字
+        常见思路：
+        1.去除where
+        2.添加1 = 1
+
+        <where>标签
+        1.当where语句块没有内容时，会去除where关键字
+        2.当where语句块有查询条件时，会添加where关键字
+          还会去除最前面的and关键字
+
+ -->
+    <select id="selectByCondition" resultType="com.yml.mybaits.model.UserInfo">
+        select  * from user_info
+        <where>
+            <if test="phone != null">
+                and phone = #{phone}
+            </if>
+            <if test="deleteFlag != null">
+                and delete_flag = #{deleteFlag};
+            </if>
+        </where>
+
+
+<!-- 方法2.使用 1= 1           where 1 = 1-->
+<!--            <trim>-->
+<!--                <if test="phone != null">-->
+<!--                    and phone = #{phone}-->
+<!--                </if>-->
+<!--                <if test="deleteFlag != null">-->
+<!--                    and delete_flag = #{deleteFlag};-->
+<!--                </if>-->
+<!--            </trim>-->
+
+<!--方式1,无法解决           <trim prefixOverrides="and">-->
+<!--                <if test="phone != null">-->
+<!--                    phone = #{phone}-->
+<!--                </if>-->
+<!--                <if test="deleteFlag != null">-->
+<!--                    and delete_flag = #{deleteFlag};-->
+<!--                </if>-->
+<!--            </trim>-->
+
+    </select>
+
+<!--动态SQL-->
+<!--    更新数据的时候不建议将where条件去掉,因为忘记传入更改条件会将SQL数据全部修改造成数据丢失-->
+<!--    不建议将这里的更新数据的where改为动态SQL-->
+<!--    更新数据可以某个或者某几个为空，但是不可能全为空，否侧语法会报错-->
+<!--    set里面的可以几个可以为空，但是不能同时为空-->
+
+<!--    set标签会帮我们生成set关键字，并且会帮我们去除多余的逗号-->
+<!--    关键字一个都没有回使update语法错误，不能都为空-->
+    <update id="updateByCondition">
+        update user_info
+        <set>
+            <if test="password != null">
+                password = #{password},
+            </if>
+
+            <if test="age != null">
+                age = #{age},
+            </if>
+
+            <if test="gender != null">
+                gender = #{gender}
+            </if>
+        </set>
+
+
+<!--        set-->
+<!--        <trim suffixOverrides=",">-->
+
+<!--            <if test="password != null">-->
+<!--                password = #{password},-->
+<!--            </if>-->
+
+<!--            <if test="age != null">-->
+<!--                age = #{age},-->
+<!--            </if>-->
+
+<!--            <if test="gender != null">-->
+<!--                gender = #{gender}-->
+<!--            </if>-->
+
+<!--        </trim>-->
+
+        where id = #{id}
+    </update>
+
+
+<!--    批量删除-->
+<!--    separator 分割符，元素和元素之间的分隔符-->
+<!--    close和 open  foreach 语句块的开始和结束-->
+<!--    item 集合里面的每一个元素-->
+<!--    index 索引-->
+
+<!--    /*(23,22,21,20); 拼接字符串*/-->
+    <delete id="batchDelete">
+
+        DELETE FROM user_info WHERE id IN
+        <foreach collection="ids"  open="("  close=")"  separator="," item="id">
+            #{id}
+        </foreach>
+
+<!--        /* id = 1 or id = 2 or id = 3 */-->
+<!--        <foreach collection="ids" separator="or" item="id">-->
+<!--            id = #{id}-->
+<!--        </foreach>-->
+
+
+<!--/*        ("z1","p1"),("z1","p1"),("z1","p1"),("z1","p1"),*/-->
+<!--        <foreach collection="userinfos"   separator="," item="userinfo">-->
+<!--            (#{userinfo.username},#{userinfo.password})-->
+<!--        </foreach>-->
+
+
+
+    </delete>
+
+
+
+
+</mapper>

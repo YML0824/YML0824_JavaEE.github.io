@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: springlog
+
+#分目录设置级别
+logging:
+  level:
+    root: info
+    com:
+      yml:
+        com:
+          springlog:
+            controller: trace
+
+#日志持久化保存
+# logging.file.path 设置日志的路径
+#logging.file.name 设置日志的名称，可以带绝对路径或者相对路径
+#如果两个配置同时存在，以 logging.file.name 为主
+  file:
+    name: logger/log.log
+#配置路径的时候默认是只能是路径，不可能为文件
+#    path: logger/
+  logback:
+    rollingpolicy:
+      #分割文件的大小
+      max-file-size: 1KB
+      #分割的文件格式
+      file-name-pattern: ${LOG_FILE}.%d{yyyy-MM-dd}.%i
+#  pattern:
+#    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} %c %M %L [%thread] %m%n'
+#    file: '%d{yyyy-MM-dd HH:mm:ss.SSS} %c %M %L [%thread] %m%n'

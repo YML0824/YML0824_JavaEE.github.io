@@ -1,0 +1,8 @@
+2025-10-24T14:47:19.010+08:00  INFO 31600 --- [springlog] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-10-24T14:47:19.027+08:00  INFO 31600 --- [springlog] [http-nio-8080-exec-1] c.y.c.s.controller.LogController2        : logger 打印日志
+2025-10-24T14:47:19.027+08:00 TRACE 31600 --- [springlog] [http-nio-8080-exec-1] c.y.c.s.controller.LogController2        : logger trace
+2025-10-24T14:47:19.027+08:00 DEBUG 31600 --- [springlog] [http-nio-8080-exec-1] c.y.c.s.controller.LogController2        : logger debug
+2025-10-24T14:47:19.027+08:00  INFO 31600 --- [springlog] [http-nio-8080-exec-1] c.y.c.s.controller.LogController2        : logger info
+2025-10-24T14:47:19.027+08:00  WARN 31600 --- [springlog] [http-nio-8080-exec-1] c.y.c.s.controller.LogController2        : logger warn
+2025-10-24T14:47:19.027+08:00 ERROR 31600 --- [springlog] [http-nio-8080-exec-1] c.y.c.s.controller.LogController2        : logger error
+2025-10-24T15:18:32.650+08:00  INFO 31600 --- [springlog] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete

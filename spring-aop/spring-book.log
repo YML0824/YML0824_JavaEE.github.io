@@ -1,0 +1,44 @@
+2025-11-14T01:57:37.299+08:00  INFO 7392 --- [spring-aop] [main] com.yml.aop.SpringAopApplication         : Starting SpringAopApplication using Java 17.0.9 with PID 7392 (D:\Java\JavaEE2\spring-aop\target\classes started by YY_ang in D:\Java\JavaEE2\spring-aop)
+2025-11-14T01:57:37.303+08:00  INFO 7392 --- [spring-aop] [main] com.yml.aop.SpringAopApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-11-14T01:57:37.961+08:00  INFO 7392 --- [spring-aop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-11-14T01:57:37.969+08:00  INFO 7392 --- [spring-aop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-14T01:57:37.970+08:00  INFO 7392 --- [spring-aop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-14T01:57:37.999+08:00  INFO 7392 --- [spring-aop] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-14T01:57:37.999+08:00  INFO 7392 --- [spring-aop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 666 ms
+2025-11-14T01:57:38.379+08:00  INFO 7392 --- [spring-aop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-11-14T01:57:38.384+08:00  INFO 7392 --- [spring-aop] [main] com.yml.aop.SpringAopApplication         : Started SpringAopApplication in 1.443 seconds (process running for 1.829)
+2025-11-14T01:58:34.152+08:00  INFO 7392 --- [spring-aop] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-14T01:58:34.153+08:00  INFO 7392 --- [spring-aop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-14T01:58:34.154+08:00  INFO 7392 --- [spring-aop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-11-14T01:58:53.919+08:00  INFO 7392 --- [spring-aop] [http-nio-8080-exec-4] com.yml.aop.controller.TestController    : 执行t3
+2025-11-14T01:59:20.966+08:00  INFO 7392 --- [spring-aop] [http-nio-8080-exec-3] com.yml.aop.aspect.MyAspectDemo          : 目标方法执行前.........
+2025-11-14T01:59:20.966+08:00  INFO 7392 --- [spring-aop] [http-nio-8080-exec-3] com.yml.aop.controller.TestController    : 执行t2
+2025-11-14T01:59:20.966+08:00  INFO 7392 --- [spring-aop] [http-nio-8080-exec-3] com.yml.aop.aspect.MyAspectDemo          : 目标方法执行后.........
+2025-11-14T02:00:09.574+08:00  INFO 7392 --- [spring-aop] [http-nio-8080-exec-8] com.yml.aop.aspect.MyAspectDemo          : 目标方法执行前.........
+2025-11-14T02:00:09.574+08:00  INFO 7392 --- [spring-aop] [http-nio-8080-exec-8] com.yml.aop.controller.UserController    : 执行u1
+2025-11-14T02:00:09.575+08:00  INFO 7392 --- [spring-aop] [http-nio-8080-exec-8] com.yml.aop.aspect.MyAspectDemo          : 目标方法执行后.........
+2025-11-14T02:09:47.498+08:00  INFO 7392 --- [spring-aop] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-14T02:09:47.722+08:00  INFO 7392 --- [spring-aop] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-14T02:09:50.171+08:00  INFO 708 --- [spring-aop] [main] com.yml.aop.SpringAopApplication         : Starting SpringAopApplication using Java 17.0.9 with PID 708 (D:\Java\JavaEE2\spring-aop\target\classes started by YY_ang in D:\Java\JavaEE2\spring-aop)
+2025-11-14T02:09:50.173+08:00  INFO 708 --- [spring-aop] [main] com.yml.aop.SpringAopApplication         : No active profile set, falling back to 1 default profile: "default"
+2025-11-14T02:09:50.698+08:00  INFO 708 --- [spring-aop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-11-14T02:09:50.708+08:00  INFO 708 --- [spring-aop] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-14T02:09:50.708+08:00  INFO 708 --- [spring-aop] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.48]
+2025-11-14T02:09:50.736+08:00  INFO 708 --- [spring-aop] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-14T02:09:50.736+08:00  INFO 708 --- [spring-aop] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 538 ms
+2025-11-14T02:09:51.039+08:00  INFO 708 --- [spring-aop] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-11-14T02:09:51.044+08:00  INFO 708 --- [spring-aop] [main] com.yml.aop.SpringAopApplication         : Started SpringAopApplication in 1.155 seconds (process running for 1.494)
+2025-11-14T02:09:56.400+08:00  INFO 708 --- [spring-aop] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-14T02:09:56.401+08:00  INFO 708 --- [spring-aop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-14T02:09:56.401+08:00  INFO 708 --- [spring-aop] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-11-14T02:09:56.419+08:00  INFO 708 --- [spring-aop] [http-nio-8080-exec-1] com.yml.aop.aspect.MyAspectDemo          : 目标方法执行前.........
+2025-11-14T02:09:56.420+08:00  INFO 708 --- [spring-aop] [http-nio-8080-exec-1] com.yml.aop.controller.UserController    : 执行u1
+2025-11-14T02:09:56.420+08:00  INFO 708 --- [spring-aop] [http-nio-8080-exec-1] com.yml.aop.aspect.MyAspectDemo          : 目标方法执行后.........
+2025-11-14T02:10:18.732+08:00  INFO 708 --- [spring-aop] [http-nio-8080-exec-4] com.yml.aop.aspect.MyAspectDemo          : 目标方法执行前.........
+2025-11-14T02:10:18.732+08:00  INFO 708 --- [spring-aop] [http-nio-8080-exec-4] com.yml.aop.controller.UserController    : 执行u1
+2025-11-14T02:10:18.732+08:00  INFO 708 --- [spring-aop] [http-nio-8080-exec-4] com.yml.aop.aspect.MyAspectDemo          : 目标方法执行后.........
+2025-11-14T02:10:33.201+08:00  INFO 708 --- [spring-aop] [http-nio-8080-exec-2] com.yml.aop.aspect.MyAspectDemo          : 目标方法执行前.........
+2025-11-14T02:10:33.202+08:00  INFO 708 --- [spring-aop] [http-nio-8080-exec-2] com.yml.aop.controller.UserController    : 执行u1
+2025-11-14T02:10:33.202+08:00  INFO 708 --- [spring-aop] [http-nio-8080-exec-2] com.yml.aop.aspect.MyAspectDemo          : 目标方法执行后.........
+2025-11-14T02:33:43.129+08:00  INFO 708 --- [spring-aop] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-14T02:33:43.347+08:00  INFO 708 --- [spring-aop] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete

@@ -1,0 +1,130 @@
+#server:
+#  #  port: 9091 这个地方中间有一个空格是不能省略的，前面的空格也是不能省略
+#  port: 9091
+#
+#my:
+#  key1: 10
+#  key2: 20
+
+#yml的一层key
+mykey: value
+
+#数据库配置
+#  spring.datasource.url=jdbc:mysql://127.0.0.1:3306/testdb?characterEncoding=utf8&useSSL=false
+#  spring.datasource.username=root
+#  spring.datasource.password=root
+#
+
+#yml的多层key
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/testdb?characterEncoding=utf8&useSSL=false
+    username: root
+    password: root
+
+
+#自定义的key
+#aa.bb.cc = 5
+#aa.bb.dd = 6
+
+#yml的方式1
+#aa:
+#  bb:
+#    cc: 5
+#    dd: 6
+#
+##yml的方式2
+#aa.bb.cc: 5
+#aa.bb.dd: 6
+
+
+
+#yml的第一种形式
+#字符串
+#String.value: hello
+#
+##布尔值，true或false
+#boolean.value: true
+#boolean.value1: false
+#
+#
+##整数
+#int.value: 10
+#
+##浮点数
+#float.value: 4.14
+#
+##null，~代表null
+#null.value: ~
+#
+#
+## ""空字符串
+##，直接后面什么都不加就可以了，但是这种方式不直观，更多的表示使用引号括起来
+#empty.value: ''
+#
+
+
+
+##yml的第二中形式
+##字符串
+#string:
+#  value: hello
+#
+#
+##布尔值，true或false
+#boolean:
+#  value1: ture
+#  value2: false
+##整数
+#int:
+#  value: 10
+##浮点数
+#float:
+#  value: 41.1
+###null，~代表null
+#null:
+#  value: ~
+### ""空字符串
+###，直接后面什么都不加就可以了，但是这种方式不直观，更多的表示使用引号括起来
+#empty:
+#  value: ''
+#
+
+
+
+
+my:
+  key3: hello
+  key4: 5
+
+
+
+
+
+#yml配置对象
+person:
+  id: 1
+  name: Java113
+  age: 10
+
+
+#配置集合
+#配置文件也可以配置list集合
+#dbtypes 这个是一个对象
+dbtypes:
+  id: 1
+  name:
+    - mysql
+    - sqlserver
+    - db2
+  ball:
+    k1: v1
+    k2: v2
+    k3: v3
+
+
+
+
+
+
+
